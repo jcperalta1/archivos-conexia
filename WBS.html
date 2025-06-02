@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CONEXIA WBS</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { packages: ["orgchart"] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tarea');
+      data.addColumn('string', 'Padre');
+      data.addRows([
+        // Nivel 1
+        [{v:'CONEXIA', f:'<div style="color:white;background-color:#003366;padding:5px;border-radius:5px"><b>CONEXIA</b></div>'}, ''],
+
+        // Nivel 2
+        ['Gestión del Proyecto', 'CONEXIA'],
+        ['Gestión del Producto', 'CONEXIA'],
+
+        // Nivel 3 - Gestión del Proyecto
+        ['Estudio Inicial', 'Gestión del Proyecto'],
+        ['Plan de Proyecto', 'Gestión del Proyecto'],
+        ['Paper y Poster', 'Gestión del Proyecto'],
+        ['Análisis del impacto ambiental', 'Gestión del Proyecto'],
+		['Planificación y Seguimiento', 'Gestión del Proyecto'],
+
+        // Nivel 4 - Estudio Inicial
+        ['Objetivo del proyecto', 'Estudio Inicial'],
+        ['Ámbito de aplicación', 'Estudio Inicial'],
+        ['Procesos involucrados', 'Estudio Inicial'],
+        ['Mapa de procesos global', 'Estudio Inicial'],
+        ['Impulsos', 'Estudio Inicial'],
+        ['Propuesta', 'Estudio Inicial'],
+			
+		// Nivel 5 - Impulsos
+		['Necesidades', 'Impulsos'],
+		['Problemas', 'Impulsos'],
+		['Oportunidades', 'Impulsos'],
+		
+		// Nivel 5 - Propuesta
+		['Objetivo', 'Propuesta'],
+		['Alcances - Requerimientos', 'Propuesta'],
+			
+        // Nivel 4 - Plan de Proyecto
+        ['Propuesta metodológica', 'Plan de Proyecto'],
+        ['Plan de alcance', 'Plan de Proyecto'],
+		['Cronograma', 'Plan de Proyecto'],
+        ['Plan de riesgos', 'Plan de Proyecto'],
+		['Presupuesto', 'Plan de Proyecto'],
+		
+		// Nivel 5 - Plan de alcance
+		['Alcances', 'Plan de alcance'],
+		['WBS', 'Plan de alcance'],
+		['Equipo de Trabajo', 'Plan de alcance'],
+
+        // Nivel 4 - Paper y Poster
+        ['Paper', 'Paper y Poster'],
+        ['Poster', 'Paper y Poster'],
+
+        // Nivel 4 - Planificación y Seguimiento
+        ['Sprint 0', 'Planificación y Seguimiento'],
+        ['Sprint 1..n', 'Planificación y Seguimiento'],
+
+        // Nivel 5 - Sprint 0
+        ['Integrantes del proyecto', 'Sprint 0'],
+        ['Product Backlog inicial', 'Sprint 0'],
+        ['Herramienta de sw para gestión de proyectos', 'Sprint 0'],
+        ['Estructura de la documentación del producto', 'Sprint 0'],
+        ['Técnica de estimación', 'Sprint 0'],
+        ['Tecnologías', 'Sprint 0'],
+        ['Pautas de codificación y testing', 'Sprint 0'],
+        ['Métricas del proyecto', 'Sprint 0'],
+		
+		// Nivel 6 - Integrantes del proyecto
+		['Product Owner', 'Integrantes del proyecto'],
+		['Scrum Master', 'Integrantes del proyecto'],
+		['Equipo', 'Integrantes del proyecto'],
+		
+		// Nivel 6 - Product Backlog inicial
+		['Epics, User Story', 'Product Backlog inicial'],
+		['Story Map', 'Product Backlog inicial'],
+		
+		// Nivel 6 - Herramienta de sw para gestión de proyectos
+		['Nombre y descripción', 'Herramienta de sw para gestión de proyectos'],
+		['Forma de coordinación del trabajo', 'Herramienta de sw para gestión de proyectos'],
+		['Ciclo de vida de los artefactos', 'Herramienta de sw para gestión de proyectos'],
+		
+		// Nivel 6 - Tecnologías
+		['Front-End', 'Tecnologías'],
+		['Back-End', 'Tecnologías'],
+		['Base de Datos', 'Tecnologías'],
+		['Infraestructura', 'Tecnologías'],
+		['Control de versionado', 'Tecnologías'],
+			
+        // Nivel 5 - Sprint 1..n
+        ['Introducción', 'Sprint 1..n'],
+        ['Planificación', 'Sprint 1..n'],
+        ['Resultados', 'Sprint 1..n'],
+			
+		// Nivel 6 - Planificación
+		['Product Backlog actualizado y priorizado', 'Planificación'],
+		['Story Map', 'Planificación'],
+		['Sprint Backlog', 'Planificación'],
+		['Estimación del Sprint', 'Planificación'],
+		
+		// Nivel 6 - Resultados
+		['Resultado de la Review', 'Resultados'],
+		['Seguimiento del Sprint', 'Resultados'],
+		['Métricas', 'Resultados'],
+		['Resultado de la Retrospectiva', 'Resultados'],
+
+        // Nivel 3 - Gestión del Producto
+        ['Definición de la solución', 'Gestión del Producto'],
+
+        // Nivel 4 - Gestión del Producto / Sprints
+        ['Sprint 1', 'Definición de la solución'],
+        ['Sprint 2..n-1', 'Definición de la solución'],
+        ['Sprint n', 'Definición de la solución'],
+
+        // Nivel 5 - Sprint 1
+        ['Definir y actualizar PB', 'Sprint 1'],
+        ['Detallar US', 'Sprint 1'],
+        ['Prototipos US', 'Sprint 1'],
+        ['Definir y actualizar diagrama DER', 'Sprint 1'],
+        ['Definir y actualizar diagrama de clases', 'Sprint 1'],
+        ['Definir y actualizar diagrama de despliegue', 'Sprint 1'],
+        ['Definir y actualizar diagrama de transición de estados', 'Sprint 1'],
+
+        // Nivel 5 - Sprint 2..n-1
+        ['Actualizar PB', 'Sprint 2..n-1'],
+        ['Detallar US', 'Sprint 2..n-1'],
+        ['Prototipos US', 'Sprint 2..n-1'],
+        ['Actualizar diagrama DER', 'Sprint 2..n-1'],
+        ['Actualizar diagrama de clases', 'Sprint 2..n-1'],
+        ['Actualizar diagrama de despliegue', 'Sprint 2..n-1'],
+        ['Actualizar diagrama de transición de estados', 'Sprint 2..n-1'],
+
+        // Nivel 5 - Sprint n
+        ['Pruebas finales', 'Sprint n'],
+        ['Redactar manual de usuario', 'Sprint n'],
+        ['Revisión final', 'Sprint n'],
+        ['Despliegue', 'Sprint n']
+      ]);
+
+      var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+      chart.draw(data, { allowHtml: true });
+    }
+  </script>
+</head>
+<body>
+  <h2 style="font-family:sans-serif; color:#003366;">CONEXIA WBS</h2>
+  <div id="chart_div"></div>
+</body>
+</html>
