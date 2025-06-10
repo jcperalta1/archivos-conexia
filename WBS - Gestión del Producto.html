@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CONEXIA WBS</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { packages: ["orgchart"] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Tarea');
+      data.addColumn('string', 'Padre');
+      data.addRows([
+        // Nivel 1
+        [{v:'CONEXIA', f:'<div style="color:white;background-color:#003366;padding:5px;border-radius:5px"><b>CONEXIA</b></div>'}, ''],
+		
+		// Nivel 2 - Conexia
+        ['Gestión del Producto', 'CONEXIA'],
+
+        // Nivel 3 - Gestión del Producto / Sprints
+        ['Sprint 1 y 2', 'Gestión del Producto'],
+        ['Sprint 3, 4 y 5', 'Gestión del Producto'],
+        ['Sprint 5, 6, 7 y 8', 'Gestión del Producto'],
+		['Sprint 8, 9, 10 y 11', 'Gestión del Producto'],
+		['Sprint 12', 'Gestión del Producto'], 
+		['Sprint 13', 'Gestión del Producto'], 
+		['Sprint 14', 'Gestión del Producto'], 
+
+        // Nivel 4 - Sprint 1 y 2
+        ['Gestión de usuarios y perfiles', 'Sprint 1 y 2'],
+
+        // Nivel 4 - Sprint 3, 4 y 5
+        ['Gestión de proyectos colaborativos', 'Sprint 3, 4 y 5'],
+
+        // Nivel 4 - Sprint 5, 6, 7 y 8
+        ['Conexiones y comunidad', 'Sprint 5, 6, 7 y 8'],
+		
+		// Nivel 4 - Sprint 8, 9, 10 y 11
+        ['Gestión de servicios digitales', 'Sprint 8, 9, 10 y 11'],
+		
+		// Nivel 4 - Sprint 12
+        ['Proceso de reseñas y valoraciones', 'Sprint 12'],
+		
+		// Nivel 4 - Sprint 13
+        ['Proceso de monetización y membresías', 'Sprint 13'],
+		
+		// Nivel 4 - Sprint 14
+        ['Análisis y métricas', 'Sprint 14']
+        
+      ]);
+
+      var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+      chart.draw(data, { allowHtml: true });
+    }
+  </script>
+</head>
+<body>
+  <h2 style="font-family:sans-serif; color:#003366;">CONEXIA WBS</h2>
+  <div id="chart_div"></div>
+</body>
+</html>
